@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message HttpRequest {
+    uint32 major_version = 1;
+    uint32 minor_version = 2;
+    string url = 3;
+    string query_string = 4;
+    repeated StringStringPair headers = 5;
+    bytes body = 6;
+    reserved 7;
+    reserved "urlencoded_form";
+    reserved 8;
+    reserved "multipart_form";
+}
+
+message StringStringPair {
+    string first = 1;
+    string second = 2;
+}
